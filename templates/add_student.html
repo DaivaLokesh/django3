@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<br/><br/>
+<center>
+    <form action="addStudent" method="POST">
+        {% csrf_token %}
+        <table>
+            <tr>
+                <td>
+                    <b>Student Name</b>
+                </td>
+                <td><input type="text" name="name"/></td>
+            </tr>
+             <tr>
+                <td>
+                    <b>Student Course</b>
+                </td>
+                <td><input type="text" name="course"/></td>
+            </tr>
+             <tr>
+                <td>
+                    <b>Student Fees</b>
+                </td>
+                <td><input type="text" name="fees"/></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center" >
+                    <input type="submit" style="color:green" value="SAVE"/>
+                </td>
+            </tr>
+            {% if flag %}
+            <tr>
+                <td colspan="2" align="center">
+                    <h4>Student Inserted Successfully </h4>
+                </td>
+            </tr>
+            {% endif %}
+        </table>
+
+    </form>
+
+</center>
+
+{% endblock %}

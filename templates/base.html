@@ -1,0 +1,16 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Base</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+</head>
+<body>
+      <nav>
+        <a href="{% url 'home'%}">Home</a>
+          <a href="{% url 'add-student' %}">Add Student </a>
+      </nav>
+    {% block body %}
+    {% endblock %}
+</body>
+</html>
